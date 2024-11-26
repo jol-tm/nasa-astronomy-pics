@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@media only screen and (min-width : 0) {
+    #pic {
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    #pic {
+        max-width: 40vw;
+        max-height: 80vh;
+    }
+}
+
 body {
     font-family: "Space Mono";
     display: flex;
@@ -20,6 +34,7 @@ body {
     gap: 1rem;
     text-align: center;
     min-width: 10rem;
+    max-width: 90vw;
     padding: 1rem;
     border: 2px solid white;
     border-radius: 1rem;
@@ -27,35 +42,26 @@ body {
 }
 
 .box {
-    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 #pic {
-    max-width: 85vw;
-    max-height: 70vh;
     border-radius: .5rem;
 }
 
 #expl {
-    position: absolute;
-    max-height: 90%;
-    overflow-y: scroll;
+    display: none;
+    max-width: 50rem;
     padding: 1rem;
+    margin: 0;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: justify;
-    opacity: 0;
-    scale: .9;
     transition: .5s;
-}
-#expl:hover {
-    opacity: 1;
-    scale: 1;
 }
 
 #bckg {
