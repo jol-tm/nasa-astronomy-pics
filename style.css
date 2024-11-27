@@ -14,11 +14,16 @@
 @media only screen and (min-width : 992px) {
     body {
         height: 100vh;
+        margin: 0;
+    }
+
+    #expl {
+        max-width: 40vw;
     }
 
     #pic {
         max-width: 40vw;
-        max-height: 80vh;
+        max-height: 70vh;
     }
 }
 
@@ -55,14 +60,16 @@ body {
     gap: 1rem;
 }
 
+#title {
+    margin: 0;
+}
+
 #pic {
     border-radius: .5rem;
 }
 
 #expl {
     display: none;
-    max-width: 50rem;
-    padding: 1rem;
     margin: 0;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
