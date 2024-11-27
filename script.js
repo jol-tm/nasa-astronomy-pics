@@ -14,11 +14,20 @@ function displayData(data) {
     const pic = document.querySelector("#pic");
 
     title.innerHTML = data[0].title;
+    expl.innerHTML = data[0].explanation;
     pic.setAttribute("src", data[0].hdurl);
     
     pic.onload = () => {
-        expl.innerHTML = data[0].explanation;
+        pic.classList.add("grow");
         expl.style.display = "block";
+        wrapper.classList.remove("glow");
+    }
+    
+    pic.onerror = () => {
+        pic.style.display = "none";
+        expl.style.display = "block";
+        expl.style.maxWidth = "100%";
+        wrapper.innerHTML += "Error loading the image, sorry :c";
         wrapper.classList.remove("glow");
     }
 }
