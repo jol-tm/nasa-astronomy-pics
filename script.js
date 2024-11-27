@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", getData);
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#bckg").play();
-});
 
 async function getData() {
     fetch("https://api.nasa.gov/planetary/apod?api_key=9bdO3AvcQIGxbVDASdDndAZQZRUEYUgjh0PgSfuh&count=1")
