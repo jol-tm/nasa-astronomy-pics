@@ -13,17 +13,16 @@ function displayData(data) {
     const expl = document.querySelector("#expl");
     const pic = document.querySelector("#pic");
     
+    title.classList.add("fade");
     title.innerHTML = data[0].title;
-    expl.innerHTML = data[0].explanation;
-    pic.setAttribute("src", data[0].hdurl);
-    
+    pic.setAttribute("src", data[0].hdurl, expl);
     
     pic.onload = () => {
         pic.classList.add("grow");
         expl.style.display = "block";
+        expl.classList.add("fade");
+        typewrite(data[0].explanation, expl);
         wrapper.classList.remove("glow");
-
-        console.log(wrapper.scrollHeight  + ', '+ document.body.scrollHeight);
 
         if (overflow(wrapper) <= 3) {
             alert('O elemento está transbordando!');
@@ -45,6 +44,19 @@ function displayData(data) {
 
 function overflow(el) {
     return (document.body.scrollHeight - el.scrollHeight);
+}
+
+function typewrite(txt, dest) {
+    let i = 0;
+
+    const interval = setInterval(() => {
+        if (i < txt.length) {
+            dest.innerHTML += txt[i];
+            i++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 50);
 }
 
 function error() {
