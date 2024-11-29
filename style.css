@@ -30,7 +30,7 @@
 }
 
 body {
-    font-family: "Space Mono";
+    font-family: "Space Mono", Arial;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@ body {
     border: 2px solid white;
     border-radius: 1rem;
     box-shadow: 0 0 1rem white;
-    transition: .3s;
+    transition: 1s;
 }
 
 .box {
@@ -78,6 +78,7 @@ body {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: start;
+    overflow: hidden;
 }
 
 #changeImg {
@@ -118,6 +119,9 @@ body {
 .fade{
     animation: fade 2s ease;
 }
+.expand {
+    animation: expand 10s ease, removeBorder 1s forwards 4s;
+}
 
 @keyframes glow {
     from {
@@ -141,6 +145,24 @@ body {
         opacity: 1;
     }
 }
+@keyframes expand {
+    from {
+        max-height: 0;
+        border-bottom: 2px solid white;
+    } to {
+        max-height: 100vh;
+        border-bottom: 2px solid white;
+    }
+}
+@keyframes removeBorder {
+    from {
+        border-bottom: 2px solid white;
+    }
+    to {
+        border-bottom: 2px solid transparent;
+    }
+}
+
 @keyframes shake {
     0% {
         opacity: .1;
