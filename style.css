@@ -51,7 +51,7 @@ body {
     padding: 1rem;
     border: 2px solid white;
     border-radius: 1rem;
-    box-shadow: 0 0 1rem;
+    box-shadow: 0 0 1rem white;
     transition: .3s;
 }
 
@@ -78,6 +78,28 @@ body {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: start;
+}
+
+#changeImg {
+    position: fixed;
+    bottom: .5rem;
+    background: rgba(0, 0, 0, 0.7);
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: .5rem;
+    transition: .3s;
+    opacity: .1;
+    animation: shake 3s;
+}
+#changeImg:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 0 .5rem white;
+    opacity: 1;
+}
+#changeImg:active {
+    scale: .9;
 }
 
 #bckg {
@@ -117,5 +139,24 @@ body {
         opacity: 0;
     } to {
         opacity: 1;
+    }
+}
+@keyframes shake {
+    0% {
+        opacity: .1;
+    } 25% { 
+        opacity: 1;
+        rotate: 5deg;
+        transform: translateY(-3px);
+    } 50% {
+        opacity: 1;
+        rotate: -5deg;
+        transform: translateY(-3px);
+    } 75% {
+        opacity: 1;
+        rotate: 5deg;
+        transform: translateY(-3px);
+    } 100% {
+        opacity: .1;
     }
 }
