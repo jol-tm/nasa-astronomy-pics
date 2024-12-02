@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon">
     <title>Nasa Astronomy Pics</title>
 </head>
 <body>
     <div id="wrapper" class="glow">
         <h1 id="title">Loading<br>...</h1>
         <div class="box">
-            <img id="pic" src="loader.gif">
+            <img id="pic" src="media/loader.gif">
             <p id="expl"></p>
         </div>
     </div>
     <div id="btns">
-        <button id="changeImg"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-25q-84 0-158.5-32T192-144q-55-55-87-129T73-431q0-28 19.5-48t48.5-20q28 0 48 20t20 48q0 113 79 191.5T480-161q113 0 192-79t79-192q0-113-79.5-191.5T479-702h-5l18 18q15 15 15 36t-14 36q-15 17-37.5 17T417-611L305-721q-20-21-20-49t20-49l110-110q16-16 38-15.5t38 16.5q15 16 15 37.5T490-853l-15 15h4q84 0 158.5 32t130 87Q823-664 855-590t32 158q0 84-32 158.5T768-144q-55 55-129.5 87T480-25Z"/></svg></button>
-        <button id="optsTranslate"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z"/></svg></button>
+        <button id="changeContent"><svg id="changeContentIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-25q-84 0-158.5-32T192-144q-55-55-87-129T73-431q0-28 19.5-48t48.5-20q28 0 48 20t20 48q0 113 79 191.5T480-161q113 0 192-79t79-192q0-113-79.5-191.5T479-702h-5l18 18q15 15 15 36t-14 36q-15 17-37.5 17T417-611L305-721q-20-21-20-49t20-49l110-110q16-16 38-15.5t38 16.5q15 16 15 37.5T490-853l-15 15h4q84 0 158.5 32t130 87Q823-664 855-590t32 158q0 84-32 158.5T768-144q-55 55-129.5 87T480-25Z"/></svg></button>
+        <button id="optsTranslate">
+            <svg id="optsTranslateIcon" class="pop" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m602.04-183.83-28.97 82.9q-4.48 12.91-16.04 20.98-11.55 8.08-25.46 8.08-22.87 0-36.93-18.77-14.05-18.77-5.34-41.4l148.66-400.33q5.71-13.63 17.75-22.06 12.03-8.44 26.66-8.44h35.02q14.63 0 26.66 8.44 12.04 8.43 17.75 22.06l148.66 400.85q8.71 21.87-4.96 40.76-13.67 18.89-36.78 18.89-14.68 0-25.97-8.08-11.29-8.07-16.77-21.98l-28.74-81.9h-195.2ZM356.26-389.04 188-221.54q-12.91 12.91-31.45 13.17-18.53.26-32.2-13.41-12.92-12.92-12.92-31.95t12.92-31.94l168.5-168.5q-37.39-37.87-66.49-82.99-29.1-45.12-52.14-99.97h97.87q18.08 35.17 37.84 62.98 19.77 27.8 46.81 56.08 32.52-33.47 66.94-90.94 34.43-57.47 51.71-108.12H75.93q-19.15 0-32.32-13.17-13.18-13.18-13.18-32.33t13.18-32.33q13.17-13.17 32.32-13.17h234.5v-34.5q0-19.15 13.18-32.33 13.17-13.17 32.32-13.17 19.16 0 32.33 13.17 13.17 13.18 13.17 32.33v34.5h234.5q19.16 0 32.33 13.17 13.17 13.18 13.17 32.33t-13.17 32.33q-13.17 13.17-32.33 13.17h-67.15q-21.48 70.8-63.83 146.56-42.36 75.77-84.8 118.16l84.52 86.28-34.06 94.2-114.35-117.11Zm274.13 124.21h138.26l-69.13-197.78-69.13 197.78Z"/></svg>
+            <svg id="closeIcon" class="pop" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="M480-385 302-207q-20 20-48 20t-47-20q-20-20-20-47.5t20-47.5l178-178-178-179q-20-20-20-47.5t20-47.5q19-20 47-20t48 20l178 178 178-178q20-20 48-20t47 20q20 20 20 47.5T753-659L575-480l178 178q20 20 20 47.5T753-207q-19 20-47 20t-48-20L480-385Z"/></svg>
+        </button>
     </div>
     <div id="langs">
+        <div>
+            <input type="radio" name="lang" value="en"><label>English</label>
+        </div>
         <div>
             <input type="radio" name="lang" value="es"><label>Spanish</label>
         </div>
@@ -32,7 +38,7 @@
         <button id="translate">Translate</button>
     </div>
     <video id="bckg" autoplay loop>
-        <source src="videoplayback.mp4" type="video/mp4">
+        <source src="media/videoplayback.mp4" type="video/mp4">
     </video>
     <script src="script.js"></script>
 </body>
