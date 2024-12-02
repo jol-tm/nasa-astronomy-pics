@@ -81,10 +81,15 @@ body {
     overflow: hidden;
 }
 
-#changeImg {
+#btns {
     position: fixed;
     bottom: .5rem;
+}
+
+#changeImg, #optsTranslate {
+    bottom: .5rem;
     background: rgba(0, 0, 0, 0.7);
+    outline: none;
     width: 3rem;
     height: 3rem;
     border: 2px solid white;
@@ -93,14 +98,39 @@ body {
     opacity: .1;
     animation: shake 3s;
 }
-#changeImg:hover {
+
+#translate {
+    outline: none;
+    color: white;
+    margin: .5rem;
+    padding: .5rem;
+    margin-left: 20%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+    border-radius: .2rem;
+    transition: .3s;
+}
+
+#changeImg:hover, #optsTranslate:hover, #translate:hover {
     cursor: pointer;
     transform: translateY(-3px);
     box-shadow: 0 0 .5rem white;
     opacity: 1;
 }
-#changeImg:active {
+#changeImg:active, #optsTranslate:active , #translate:active {
     scale: .9;
+}
+
+#langs {
+    position: fixed;
+    pointer-events: none;
+    bottom: 4rem;
+    background: rgba(0, 0, 0, 0.9);
+    padding: .5rem;
+    border: 2px solid white;
+    border-radius: .5rem;
+    opacity: 0;
+    transition: .3s;
 }
 
 #bckg {
@@ -170,14 +200,20 @@ body {
         opacity: 1;
         rotate: 5deg;
         transform: translateY(-3px);
+        box-shadow: 0 0 1rem white;
+
     } 50% {
         opacity: 1;
         rotate: -5deg;
         transform: translateY(-3px);
+        box-shadow: 0 0 1rem white;
+
     } 75% {
         opacity: 1;
         rotate: 5deg;
         transform: translateY(-3px);
+        box-shadow: 0 0 1rem white;
+
     } 100% {
         opacity: .1;
     }

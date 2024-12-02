@@ -1,5 +1,7 @@
 getData();
 document.querySelector("#changeImg").addEventListener("click", changeContent);
+document.querySelector("#optsTranslate").addEventListener("click", showHideLangs);
+document.querySelector("#translate").addEventListener("click", getTranslation);
 
 async function getData() {
     fetch("https://api.nasa.gov/planetary/apod?api_key=9bdO3AvcQIGxbVDASdDndAZQZRUEYUgjh0PgSfuh&count=1")
@@ -55,16 +57,48 @@ function changeContent() {
     getData();
 }
 
-function typewrite(txt, dest) {
-    let i = 0;
-    const interval = setInterval(() => {
-        if (i < txt.length) {
-            dest.innerHTML += txt[i];
-            i++;
-        } else {
-            clearInterval(interval);
+async function getTranslation() {
+    const expl = document.querySelector("#expl");
+    const title = document.querySelector("#title");
+    const opts = document.getElementsByName("lang");
+    let tgt;
+
+    for (const opt of opts) {
+        if (opt.checked) {
+            tgt = opt.value;
+            break;
         }
-    }, 50);
+    }
+
+    if (tgt != undefined) {
+        fetch("https://translation.googleapis.com/language/translate/v2?key=AIzaSyBGptFvj4DKI1xwOYXFzPbBFyH91g6H9ZM", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "q": [`${title.innerText}`, `${expl.innerText}`],
+                "target": `${tgt}`,
+            })
+        })
+        .then(Response => Response.json())
+        .then((data) => {
+            title.innerText = data.data.translations[0].translatedText;
+            expl.innerText = data.data.translations[1].translatedText;
+        });
+    }
+    showHideLangs();
+}
+
+function showHideLangs() {
+    const langs = document.querySelector("#langs");
+    if (langs.style.opacity == 0) {
+        langs.style.opacity = 1;
+        langs.style.pointerEvents = "all";
+    } else {
+        langs.style.opacity = 0;
+        langs.style.pointerEvents = "none";
+    }
 }
 
 function error() {

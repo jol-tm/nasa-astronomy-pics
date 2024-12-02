@@ -15,7 +15,22 @@
             <p id="expl"></p>
         </div>
     </div>
-    <button id="changeImg"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-25q-84 0-158.5-32T192-144q-55-55-87-129T73-431q0-28 19.5-48t48.5-20q28 0 48 20t20 48q0 113 79 191.5T480-161q113 0 192-79t79-192q0-113-79.5-191.5T479-702h-5l18 18q15 15 15 36t-14 36q-15 17-37.5 17T417-611L305-721q-20-21-20-49t20-49l110-110q16-16 38-15.5t38 16.5q15 16 15 37.5T490-853l-15 15h4q84 0 158.5 32t130 87Q823-664 855-590t32 158q0 84-32 158.5T768-144q-55 55-129.5 87T480-25Z"/></svg></button>
+    <div id="btns">
+        <button id="changeImg"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-25q-84 0-158.5-32T192-144q-55-55-87-129T73-431q0-28 19.5-48t48.5-20q28 0 48 20t20 48q0 113 79 191.5T480-161q113 0 192-79t79-192q0-113-79.5-191.5T479-702h-5l18 18q15 15 15 36t-14 36q-15 17-37.5 17T417-611L305-721q-20-21-20-49t20-49l110-110q16-16 38-15.5t38 16.5q15 16 15 37.5T490-853l-15 15h4q84 0 158.5 32t130 87Q823-664 855-590t32 158q0 84-32 158.5T768-144q-55 55-129.5 87T480-25Z"/></svg></button>
+        <button id="optsTranslate"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z"/></svg></button>
+    </div>
+    <div id="langs">
+        <div>
+            <input type="radio" name="lang" value="es"><label>Spanish</label>
+        </div>
+        <div>
+            <input type="radio" name="lang" value="fr"><label>French</label>
+        </div>
+        <div>
+            <input type="radio" name="lang" value="pt"><label>Portuguese</label>
+        </div>
+        <button id="translate">Translate</button>
+    </div>
     <video id="bckg" autoplay loop>
         <source src="videoplayback.mp4" type="video/mp4">
     </video>
