@@ -82,7 +82,6 @@ async function getTranslation() {
         })
         .then(Response => Response.json())
         .then((data) => {
-            console.log(data);
             title.innerText = data.data.translations[0].translatedText;
             expl.innerText = data.data.translations[1].translatedText;
         });
@@ -92,7 +91,6 @@ async function getTranslation() {
 
 function showHideLangs() {
     const langs = document.querySelector("#langs");
-    const iconChange = document.querySelector("#changeContentIcon");
     const iconTranslate = document.querySelector("#optsTranslateIcon");
     const iconClose = document.querySelector("#closeIcon");
 
