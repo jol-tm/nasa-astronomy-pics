@@ -1,7 +1,5 @@
 getData();
 document.querySelector("#changeContent").addEventListener("click", changeContent);
-document.querySelector("#translate").addEventListener("click", getTranslation);
-document.querySelector("#optsTranslate").addEventListener("click", showHideLangs);
 
 async function getData() {
     fetch("https://api.nasa.gov/planetary/apod?api_key=9bdO3AvcQIGxbVDASdDndAZQZRUEYUgjh0PgSfuh&count=1")
@@ -41,7 +39,7 @@ function displayData(data) {
         showExpl();
         expl.style.maxWidth = "100%";
         pic.style.display = "none";
-        wrapper.innerHTML += "Error loading the image, sorry :c";
+        wrapper.innerHTML += "Image unavailable :c";
         wrapper.classList.remove("glow");
     }
 }
@@ -57,59 +55,24 @@ function changeContent() {
     getData();
 }
 
-async function getTranslation() {
-    const expl = document.querySelector("#expl");
-    const title = document.querySelector("#title");
-    const opts = document.getElementsByName("lang");
-    let tgt;
-
-    opts.forEach(el => {
-        if (el.checked) {
-            tgt = el.value;
-        }
-    });
-
-    if (tgt != undefined) {
-        fetch("https://translation.googleapis.com/language/translate/v2?key=AIzaSyBGptFvj4DKI1xwOYXFzPbBFyH91g6H9ZM", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                "q": [`${title.innerText}`, `${expl.innerText}`],
-                "target": `${tgt}`,
-            })
-        })
-        .then(Response => Response.json())
-        .then((data) => {
-            title.innerText = data.data.translations[0].translatedText;
-            expl.innerText = data.data.translations[1].translatedText;
-        });
-    }
-    showHideLangs();
-}
-
 function showHideLangs() {
     const langs = document.querySelector("#langs");
-    const iconTranslate = document.querySelector("#optsTranslateIcon");
     const iconClose = document.querySelector("#closeIcon");
 
     if (langs.style.opacity == 0) {
         langs.style.height = "9rem";
         langs.style.opacity = 1;
         langs.style.pointerEvents = "all";
-        iconTranslate.style.display = "none";
         iconClose.style.display = "inline";
     } else {
         langs.style.height = 0;
         langs.style.opacity = 0;
         langs.style.pointerEvents = "none";
-        iconTranslate.style.display = "inline";
         iconClose.style.display = "none";
     }
 }
 
 function error() {
     const wrapper = document.querySelector("#wrapper");
-    wrapper.innerHTML = "Error loading :c<br>Try refreshing the page.";
+    wrapper.innerHTML = "Error loading :c";
 }
