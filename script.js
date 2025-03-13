@@ -24,7 +24,6 @@ function displayData(data) {
         expl.innerHTML = data[0].explanation;
     }
 
-    wrapper.classList.add("glow");
     title.classList.add("fade");
     title.innerHTML = data[0].title;
     pic.setAttribute("src", data[0].hdurl);
@@ -32,7 +31,6 @@ function displayData(data) {
     pic.onload = () => {
         showExpl();
         pic.classList.add("grow");
-        wrapper.classList.remove("glow");
     }
     
     pic.onerror = () => {
@@ -40,7 +38,6 @@ function displayData(data) {
         expl.style.maxWidth = "100%";
         pic.style.display = "none";
         wrapper.innerHTML += "Image unavailable :c";
-        wrapper.classList.remove("glow");
     }
 }
 
