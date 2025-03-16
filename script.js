@@ -1,4 +1,3 @@
-getData();
 document.querySelector("#changeContent").addEventListener("click", changeContent);
 
 async function getData() {
@@ -73,3 +72,5 @@ function error() {
     const wrapper = document.querySelector("#wrapper");
     wrapper.innerHTML = "Error loading :c";
 }
+
+getData();

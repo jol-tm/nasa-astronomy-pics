@@ -100,7 +100,7 @@ body {
     animation: shake 5s;
 }
 
-#changeContent:hover {
+#changeContent:hover, #changeContent:focus {
     cursor: pointer;
     transform: translateY(-3px);
     box-shadow: 0 0 .5rem white;
@@ -120,8 +120,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 100vw;
-    min-height: 100vh;
+    width: 100vw;
     z-index: -1;
 }
 
